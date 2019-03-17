@@ -1,0 +1,14 @@
+/* MAIN SERVER FILE */
+
+// DEPENDENCIES
+const express = require('express');
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+const app = express();
+
+passport.use(new GoogleStrategy({}));
+
+const PORT = process.env.PORT || 5000;
+// Server listen
+app.listen(PORT, () => console.log('Server is running on port 5000'));
