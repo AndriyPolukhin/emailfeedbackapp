@@ -40,3 +40,4 @@
 
 # CLIENT ID With CLIENT SECRET
 ## index.js => config/keys.js ? prod => use env variables : dev? config/dev.js
+## Store Client Id and secret in this file/ do not commit
