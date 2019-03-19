@@ -22,11 +22,11 @@
 ## 5. User confirms the access by the app
 ## 6. Google sends a code back to the server e.g. localhost:5000/auth/google/callback?code=456
 ## 7. App sends request to google with the 'code' included
-## 8. Google sends the user details based on the code
-## 9. Recieved user details create a record in the database
-## 10. User Id is set in cookies for this user
-## 11. User is redirected to the logged in page e.g. localhost:3000/
-## 12. If additional resourses are needed from the API => cookies are used for identification as they are inculded with a user id for the app
+## 8. Google sends the user details/profile based on the code
+## 9. WhenReceived user details create a record in the database
+## 10.User Id is set in cookies for this user
+## 11.User is redirected to the logged in page e.g. localhost:3000/
+## 12.If additional resourses are needed from the API => cookies are used for identification as they are inculded with a user id for the app
 
 ### SO:
 ### 1. localhost:5000/auth/google =>
@@ -41,3 +41,12 @@
 # CLIENT ID With CLIENT SECRET
 ## index.js => config/keys.js ? prod => use env variables : dev? config/dev.js
 ## Store Client Id and secret in this file/ do not commit
+
+# The habits are:
+## - Understand the scope and the problem first before coding
+## - Document as much as you can
+## - Write readable & maintainable code
+## - Be good at cross-functional work
+## - Be an effective communicator
+## - Recognize opportunities for improvements & impacts
+## - Have a growth mindset
