@@ -53,3 +53,13 @@
 
 # Connecting the database. Just pluging in mongoose for now.
 # You have this hour or you don't
+
+# TO use the localhost links please set a proxy in the client package json Such as:
+ ## "proxy": "http://localhost:5000"
+ # This way it has access to the server
+  # This one do not work correctly anymore
+	## "proxy": {
+	## 	"/auth/google": {
+	## 		"target": "http://localhost:5000"
+	## 	}
+	## },
