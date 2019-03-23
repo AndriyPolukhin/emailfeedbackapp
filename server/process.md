@@ -63,3 +63,20 @@
 	## 		"target": "http://localhost:5000"
 	## 	}
 	## },
+
+
+# REDUX
+
+# Redux Store => Holds all of the state
+## to change the state we call the action creator and dispatch
+## the action to the reducers, they create the combined reducer and send the new state to the store. Updated state in the store sends it to the componets and they rerender
+
+### REACT COMPONENTS => Call a ACTION CREATOR (AC)
+### ACTION CREATOR => Returns a ACTION (A)
+### ACTION => Sends itself to a REDUCER (R)
+### REDUCER => Updates the state in the STORE
+### STORE => Sends STATE to the REACT COMPONENTS (RC)
+### REACT COMPONENTS => they RE-RENDER (RR)
+
+
+# SET UP THE ROUTER
