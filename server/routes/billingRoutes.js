@@ -3,20 +3,28 @@
 // DEPENDENCIES
 const keys = require("../config/keys");
 const stripe = require("stripe")(keys.stripeSecretKey);
+const requireLogin = require("../middlewares/requireLogin");
 
 // 1. ROUTES
 module.exports = app => {
   // Stripe route post
-  app.post("/api/stripe", async (req, res) => {
-    // console.log(req.body);
+  app.post("/api/stripe", requireLogin, async (req, res) => {
     const charge = await stripe.charges.create({
       amount: 500,
       currency: "usd",
       description: "$5 dollars for 5 credits",
       source: req.body.id
     });
+
+    req.user.credits += 5;
+    const user = await req.user.save();
+    res.send(user);
+
+    /*
+    console.log(req.body);
     console.log("===========CHARGE OBJECT STR==========");
     console.log(charge);
     console.log("===========CHARGE OBJECT END==========");
+    */
   });
 };
