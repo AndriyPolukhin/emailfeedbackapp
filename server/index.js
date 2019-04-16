@@ -17,6 +17,7 @@ mongoose.connect(keys.mongoURI);
 // APP
 const app = express();
 
+// Middlewear
 app.use(bodyParser.json());
 // Use cookies and tell passport about it
 app.use(
@@ -35,11 +36,10 @@ require("./routes/billingRoutes")(app);
 
 // Configuration for production (for heroku)
 if (process.env.NODE_ENV === "production") {
-  // Express will serve up production assets
-  // like our main.js file, or main.css file!
+  // Serve production assets
   app.use(express.static("client/build"));
 
-  // Express'll serve the index.html if it doesn't recognize the route
+  // Serve the index.html if route is not recognized
   const path = require("path");
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
